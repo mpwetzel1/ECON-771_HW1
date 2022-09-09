@@ -167,4 +167,4 @@ final.hcris.data =
   rename(year=fyear) %>%
   arrange(provider_number, year)
 
-write_tsv(final.hcris.data,'data/output/HCRIS_Data.txt',append=FALSE,col_names=TRUE)
+write_tsv(final.hcris.data,'Output/HCRIS_Data.txt',append=FALSE,col_names=TRUE)
