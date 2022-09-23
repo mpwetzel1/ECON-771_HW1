@@ -1,0 +1,86 @@
+---
+title: "04_Format Output"
+author: "Martha Wetzel"
+date: "2022-09-22"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, Hmisc, kableExtra, modelsummary, 
+               fixest, gt, flextable, stringr, did, DRDID, rmarkdown)
+load("./Output/R Objects/final.Rdata.")
+
+
+set_flextable_defaults(
+  font.family = "calibiri",
+  big.mark = ",",
+  theme_fun = "theme_booktabs"
+)
+
+init_flextable_defaults()
+```
+
+
+```{r q1, echo =FALSE}
+
+bold(flextable(uncompcare), part="header")
+
+
+
+```
+##Question 1b
+```{r q1b, echo =FALSE}
+
+
+bold(flextable(revenue), part="header")
+
+
+```
+
+```{r q2, echo =FALSE}
+
+q2_plot
+
+theme_booktabs(align(
+  q3_twfe,
+  i = NULL,
+  j = NULL,
+  align ="center",
+  part = "header"
+), bold_header = TRUE)
+
+
+#q4_es
+
+```
+##Question 4
+
+```{r q4, echo =FALSE}
+
+bold(q4_es, part="header")
+
+```
+
+##Question 5-6
+
+```{r q5_6, echo =FALSE}
+
+bold(flextable(q5_est_t), part="header")
+
+q6plot
+
+```
+
+
+##Question 7
+
+```{r q7, echo =FALSE}
+
+q7_ca_event
+
+q7_graph
+
+```
+
